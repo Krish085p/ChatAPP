@@ -1,6 +1,13 @@
+# Ignore environment files
 api/.env
 client/.env
+
+# Ignore IDE settings
 .idea
+
+# Ignore node_modules folders
 api/node_modules
 client/node_modules
+
+# Ignore uploads folder
 api/uploads/*
