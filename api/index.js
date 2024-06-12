@@ -6,24 +6,27 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const User = require('./models/User');
-const Message = require('./models/Message');
+const Message = require('./models/Messages.js');
 const ws = require('ws');
 const fs = require('fs');
+const { connectToDb } = require('./connection.js');
 
 dotenv.config();
-mongoose.connect(process.env.MONGO_URL, (err) => {
-  if (err) throw err;
-});
+// mongoose.connect(process.env.MONGO_URL, (err) => {
+//   if (err) throw err;
+// });
+connectToDb();
 const jwtSecret = process.env.JWT_SECRET;
 const bcryptSalt = bcrypt.genSaltSync(10);
-
+console.log(process.env.CLIENT_URL)
 const app = express();
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(cors({
   credentials: true,
-  origin: process.env.CLIENT_URL,
+  origin: process.env.CLIENT_URL, // Default to a known value for debugging
 }));
 
 async function getUserDataFromRequest(req) {
