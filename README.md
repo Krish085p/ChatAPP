@@ -42,9 +42,28 @@ ChatApp is a real-time messaging application built using modern web technologies
 
    ```
 3. Set up environment variables:
-    Create a .env file in the server directory and add your MongoDB URI and any other necessary environment variables:
+    - Create a '.env' file in the server directory and add your MongoDB URI and any other necessary environment variables:
     ```bash
     MONGO_URI = your_mongodb_uri
     JWT_SECRET = your_jwt_secret
     CLIENT_URL = your_client_url
     ```
+
+### Usage
+1. Start the Server(api)
+   ```bash
+   cd api
+   npm start
+
+   ```
+2. Start the Client
+   ```bash
+   cd client
+   npm start
+
+   ```
+3. Open a browser
+   - Navigate to 'http://localhost:4040' to start using the application.
+
+### Contribution
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
