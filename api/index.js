@@ -201,6 +201,3 @@ wss.on('connection', (connection, req) => {
   notifyAboutOnlinePeople();
 });
 
-// MongoDb 
-// Id: krishpatel085
-// password: krish31620
